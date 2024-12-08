@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaundryKuy - Transaksi</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <!-- SweetAlert2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">LaundryKuy - Transaksi</h1>
+      <form id="transaction-form">
+        <input type="text" id="customer-name" placeholder="Nama Pelanggan" required />
+        <input type="text" id="phone" placeholder="Nomor HP" required />
+        <select id="service-type" required>
+          <option value="" disabled selected>Pilih Jenis Layanan</option>
+          <option data-price="5000">Cuci Kering</option>
+          <option data-price="7000">Cuci Setrika</option>
+          <option data-price="8000">Setrika Saja</option>
+        </select>
+        <input type="number" id="weight" placeholder="Berat (kg)" step="0.1" required />
+        <button type="submit">Tambah Transaksi</button>
+      </form>
+      
+      <table id="transaction-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tanggal</th>
+            <th>Nama Pelanggan</th>
+            <th>No. HP</th>
+            <th>Jenis Layanan</th>
+            <th>Berat (kg)</th>
+            <th>Total</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      
+    </div>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.js"></script>
+    <script src="src/js/transaksi.js" type="module"></script>
+  </body>
+</html>
