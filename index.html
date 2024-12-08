@@ -1,55 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LaundryKuy - Transaksi</title>
-    <link rel="stylesheet" href="src/css/style.css" />
-    <!-- SweetAlert2 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="title">LaundryKuy - Transaksi</h1>
-      <form id="transaction-form">
-        <input type="text" id="customer-name" placeholder="Nama Pelanggan" required />
-        <input type="text" id="phone" placeholder="Nomor HP" required />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaundryKuy - Transaksi</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <!-- SweetAlert2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">LaundryKuy - Transaksi</h1>
+    <form id="transaction-form">
+      <div class="form-group">
+        <label for="customer-name">Nama Pelanggan</label>
+        <input type="text" id="customer-name" placeholder="masukkan nama pelanggan" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">No. telp</label>
+        <input type="text" id="phone" placeholder="masukkan nomor hp" required />
+      </div>
+      <div class="form-group">
+        <label for="service-type">Pilih jenis layanan</label>
+
         <select id="service-type" required>
-          <option value="" disabled selected>Pilih Jenis Layanan</option>
+          <option value="" disabled selected>Jenis Layanan</option>
           <option data-price="5000">Cuci Kering ( Rp. 5000 )</option>
           <option data-price="4000">Setrika ( Rp. 4000 )</option>
           <option data-price="8000">Cuci dan Setrika ( Rp. 8000 )</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="weight">Pilih berat</label>
+
         <input type="number" id="weight" placeholder="Berat (kg)" step="0.1" required />
-        <button type="submit">Tambah Transaksi</button>
-      </form>
-      
-      <table id="transaction-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Tanggal</th>
-            <th>Nama Pelanggan</th>
-            <th>No. HP</th>
-            <th>Jenis Layanan</th>
-            <th>Berat (kg)</th>
-            <th>Total</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      
-    </div>
-    <!-- SweetAlert2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.js"></script>
-    <script src="src/js/transaksi.js" type="module"></script>
-  </body>
+        <button type="submit" class="btn-save">Simpan</button>
+
+    </form>
+    <h2 class="subtitle">Data Karyawan</h2>
+
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tanggal</th>
+          <th>Nama Pelanggan</th>
+          <th>No. HP</th>
+          <th>Jenis Layanan</th>
+          <th>Berat (kg)</th>
+          <th>Total</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="#">1</td>
+          <td data-label="Tanggal">08/12/2024</td>
+          <td data-label="Nama Pelanggan">Nayaka Taqwa</td>
+          <td data-label="No. HP">08123456789</td>
+          <td data-label="Jenis Layanan">Cuci Kering</td>
+          <td data-label="Berat (kg)">3</td>
+          <td data-label="Total">Rp 15.000</td>
+          <td data-label="Aksi">
+            <div class="actions">
+              <button class="delete">🗑️</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+  
+    </table>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </div>
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.6/dist/sweetalert2.min.js"></script>
+  <script src="src/js/transaksi.js" type="module"></script>
+</body>
+
 </html>

@@ -62,9 +62,11 @@
   /* Table Styling */
   #transaction-table {
     width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    background-color: #fff;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #fff; /* Update */
+  border-radius: 10px; /* Update */
+  overflow: hidden; /* Update */
   }
   
   #transaction-table th, #transaction-table td {
@@ -135,3 +137,30 @@
     transform: scale(1.1); /* Animasi hover */
   }
   
+  /* Responsivitas untuk tabel */
+@media (max-width: 768px) {
+  #transaction-table thead {
+    display: none; /* Sembunyikan header tabel */
+  }
+
+  #transaction-table tbody, #transaction-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #transaction-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #transaction-table td::before {
+    content: attr(data-label); /* Ambil label dari data-label */
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #2c3e50;
+    margin-right: 10px;
+  }
+}
+
